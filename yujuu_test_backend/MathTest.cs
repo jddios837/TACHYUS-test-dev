@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using AngouriMath;
+using AngouriMath.Core.Exceptions;
 
 namespace yujuu_test_backend
 {
@@ -16,7 +18,16 @@ namespace yujuu_test_backend
             foreach (var val in exp.evaluationArray)
             {
                 var newExpr = expr.Substitute("x", val);
-                list.Add((float)newExpr.EvalNumerical());
+                try
+                {
+                    var eval = (float)newExpr.EvalNumerical();
+                    list.Add((float)newExpr.EvalNumerical());
+                }
+                catch (CannotEvalException e)
+                {
+                    return list;
+                }
+                
             }
             
             return list;
