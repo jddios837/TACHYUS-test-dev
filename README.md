@@ -20,3 +20,9 @@ This library includes some basic approach that is needed to resolve in this chal
 
 With this in mind, this library could be used as base code to build initial two methods 
 asked to be added on this test
+
+## What I did
+
+1. Using this library I implemented a MathTest class with two methods EvalExpression and PartialDerivative
+which resolve the approach asked for the test.
+2. Additionally I implemented a SIMPLE workflow to test it in a Console application.
